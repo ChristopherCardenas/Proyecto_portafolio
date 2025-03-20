@@ -47,6 +47,17 @@ body{
     box-shadow: 0 0 10px black;
     padding: 12px;
 }
+.navbar-img img {
+  pointer-events: none; /* Evita que la imagen reaccione a eventos del mouse */
+}
+
+
+.imagen_navbar {
+  height: 80px; /* Ajusta la altura según tu necesidad */
+  width: auto; /* Mantiene la proporción */
+  display: inline-block; /* Evita que se expanda */
+  vertical-align: middle; /* Alinea bien con el texto */
+}
 
 .barra_nav{
     background-color: rgb(5, 12, 156);
@@ -204,13 +215,53 @@ h6{
 .imagen{
     padding: 15px;
 }
+.imagen_proyecto {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las imágenes bajen de línea si no caben */
+  gap: 30px; /* Espacio entre imágenes */
+  justify-content: center; /* Centra las imágenes */
+}
 
-.imagen_proyecto img{
+.imagen_proyecto img {
+  max-width: 100%; /* Asegura que no se desborden */
+  width: 100%;     /* Hace que la imagen se ajuste a su contenedor */
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .imagen_proyecto img {
+      width: 80%;   /* Se asegura de que ocupe el 100% del contenedor */
+      max-width: 100%; /* Asegura que no exceda el 100% */
+      height: auto;   /* Mantiene la proporción de la imagen */
+  }
+  .imagen img {
+    max-width: 200px; /* Reduce el tamaño máximo en pantallas medianas */
+}
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 480px) {
+  .imagen_proyecto img {
+      width: 90%;    /* Ajusta la imagen al 100% */
+      max-width: 100%; /* Limita el tamaño máximo */
+      height: auto;    /* Mantiene la proporción de la imagen */
+  }
+  .imagen img {
+    max-width: 150px; /* Reduce aún más el tamaño en pantallas pequeñas */
+}
+}
+
+.imagen_proyecto img:hover {
+  transform: scale(1.01); /* Efecto de zoom al pasar el mouse */
+}
+
+/* .imagen_proyecto img{
     width: 50vw;
     max-width: 1000px;
     min-width: 300px;
     margin: auto;
-}
+} */
 .imagen img{
     border-radius: 50%;
     box-shadow: 8px 8px 8px  rgb(51, 51, 51) ;
@@ -220,6 +271,9 @@ h6{
 img:hover{
     transform: translateY(-1px);
     box-shadow: 8px 8px 8px  rgb(75, 75, 75)
+}
+.sub-title{
+  color: rgb(184, 0, 0);
 }
 
 /*FOOTER*/
